@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+A FCC project to create a Drum Machine using React, Redux and tailwind CSS.
+A grid of buttons mapped to drum sounds play only when powered on, also a switch for drum/piano, volume slider
+and a text for current sound played.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
