@@ -5,3 +5,35 @@
 .drumButton {
  box-shadow: black 3px 3px 5px;
 }
+
+.slider:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: grey;
+    height: 5px;
+    border: 3px solid black;
+    box-shadow: 0px 1px 0px 1px;
+    width: 100%;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 28px;
+    background: blue;
+    border: 1px solid black;
+}
+
+.slider::-moz-range-thumb {
+    appearance: none;
+    width: 10px;
+    height: 28px;
+    background: blue;
+    border: 1px solid black;
+}

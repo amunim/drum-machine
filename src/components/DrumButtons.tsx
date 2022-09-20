@@ -4,7 +4,7 @@ export function DrumButtons() {
     return (
         <div className="mx-auto h-40 w-48 grid grid-cols-3 gap-2">
             {buttons.map(item => (
-                <div className="drumButton border-1 rounded-md border-black text-center bg-gray-500">
+                <div key={item} className="drumButton border-1 rounded-md border-black text-center bg-gray-500">
                     {item}
                 </div>
             ))}
