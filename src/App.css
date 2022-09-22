@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.drumButton {
+.drum-pad {
  box-shadow: black 3px 3px 5px;
 }
 
-.drumButton:hover {
+.drum-pad:hover {
     cursor: pointer;
     scale: 1.1;
+}
+
+.drum-pad:active {
+    scale: 0.9;
 }
 
 .slider:hover {

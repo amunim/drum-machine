@@ -1,13 +1,12 @@
 import { useState } from "react"
 
-export function CustomSwitch({id, label, onFlick}: {id: string, label: string, onFlick: Function}) {
+export function CustomSwitch({id, label, onFlick, initialState = false}: {id: string, label: string, onFlick: Function, initialState: boolean}) {
 
-    const [switchFlag, setSwitch] = useState(false);
+    const [switchFlag, setSwitch] = useState(initialState);
 
     function OnPowerSwitchClick() {
         onFlick(!switchFlag);
         setSwitch(!switchFlag);
-
     }
 
     return (
