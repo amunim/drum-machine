@@ -52,9 +52,9 @@ export function DrumButtons() {
     return (
         <div className="mx-auto h-40 w-48 grid grid-cols-3 gap-2">
             {Object.keys(keys).map(item => (
-                <div key={item} onClick={() => HandleClick(item as keys)} className="drum-pad border-1 pt-3 rounded-md border-black text-center bg-gray-500">
+                <div key={item} id={item + "drum-pad"} onClick={() => HandleClick(item as keys)} className="drum-pad border-1 pt-3 rounded-md border-black text-center bg-gray-500">
                     {item}
-                    <audio src={`/${instrument}/${item}.mp3`} id={item} />
+                    <audio src={`/${instrument}/${item}.mp3`} id={item} className="clip" />
                 </div>
             ))}
         </div>

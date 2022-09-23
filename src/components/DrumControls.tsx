@@ -1,7 +1,9 @@
+import { ChangeEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../stores/hooks"
 import { instruments, selectInstrument, setInstrument } from "../stores/InstrumentSlice";
-import { selectLabel } from "../stores/labelSlice";
+import { selectLabel, setLabel } from "../stores/labelSlice";
 import { selectPower, setPower } from "../stores/PowerSlice";
+import { setVolume } from "../stores/volumeSlice";
 import { CustomSwitch } from "./CustomSwitch"
 
 export function DrumControls() {
@@ -15,6 +17,25 @@ export function DrumControls() {
         return currentInstrument === 'piano';
     }
 
+    function onVolumeChange(event: ChangeEvent<HTMLInputElement>) {
+        dispatch(setVolume(Number.parseInt(event.target.value)));
+
+        dispatch(setLabel("Volume: " + event.target.value));
+
+        setTimeout(() => dispatch(setLabel("")), 500);
+    }
+
+    function onInstrumentChange(power: boolean) {
+        if (!power) {
+            dispatch(setInstrument('drum'))
+            dispatch(setLabel("Heater Kit"));
+            
+        } else {
+            dispatch(setInstrument('piano'))
+            dispatch(setLabel("Smooth Piano kit"));
+        }
+    }
+
     return (
         <>
             <div className="flex flex-col mx-auto w-48">
@@ -24,9 +45,9 @@ export function DrumControls() {
                         {label}
                     </div>
                     <div id="slider" className="mt-2 mx-auto w-52">
-                        <input type="range" min="1" max="100" defaultValue="40" className="slider" />
+                        <input type="range" min="1" max="100" defaultValue="40" className="slider" onChange={(event) => onVolumeChange(event)} />
                     </div>
-                    <CustomSwitch id="DrumPiano" label="Bank" initialState={instrumentSwitch(instrument)} onFlick={(power: boolean) => !power ? dispatch(setInstrument('drum')) : dispatch(setInstrument('piano'))} />
+                    <CustomSwitch id="DrumPiano" label="Bank" initialState={instrumentSwitch(instrument)} onFlick={(power: boolean) => onInstrumentChange(power)} />
                 </div>
             </div>
         </>
