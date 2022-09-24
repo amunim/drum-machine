@@ -20,5 +20,5 @@ const volumeSlice = createSlice({
 });
 
 export const {setVolume} = volumeSlice.actions;
-export const selectVolume = (state: RootState) => state.volume;
+export const selectVolume = (state: RootState) => state.volume.value;
 export default volumeSlice.reducer;

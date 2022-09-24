@@ -11,7 +11,8 @@
     scale: 1.1;
 }
 
-.drum-pad:active {
+.drum-pad:active,
+.drum-pad-active {
     scale: 0.9;
 }
 

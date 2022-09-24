@@ -27,11 +27,11 @@ export function DrumControls() {
 
     function onInstrumentChange(power: boolean) {
         if (!power) {
-            dispatch(setInstrument('drum'))
+            dispatch(setInstrument('drum'));
             dispatch(setLabel("Heater Kit"));
             
         } else {
-            dispatch(setInstrument('piano'))
+            dispatch(setInstrument('piano'));
             dispatch(setLabel("Smooth Piano kit"));
         }
     }
